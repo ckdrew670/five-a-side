@@ -17,18 +17,17 @@ code {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   background-size: cover;
-  padding: 8%;
+  padding: 10%;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
 
 .header-text {
-  text-align: left;
   color: white;
   font-family: 'Libre Baskerville';
-  font-size: 5em;
+  font-size: 4em;
   
 }
 
@@ -49,7 +48,8 @@ h2 {
 }
 
 .form-input {
-  max-width: 40%;
+  max-width: 60%;
+  height: 50px;
   margin: 10px;
   border-bottom: 3px solid green;
   color: black;
@@ -58,7 +58,7 @@ h2 {
 }
 
 .form-input:focus {
-  max-width: 40%;
+  max-width: 60%;
   margin: 10px;
   color: green;
   font-weight: normal;
@@ -73,4 +73,15 @@ h2 {
   font-weight: bold;
   color: white;
   border-radius: 5%;
+}
+
+ul {
+  margin: 6%;
+}
+
+li {
+  color: green;
+  font-size: 1.6em;
+  text-align: center;
+  
 }

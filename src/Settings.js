@@ -7,6 +7,7 @@ class Settings extends Component {
         this.state = {
 
             name: props.name,
+            names: [],
             displayForm: true,
             
         };
@@ -22,17 +23,21 @@ handleName(e) {
 
 handleSubmit(e) {
     
-    let { name } = this.state;
+    let { name, names } = this.state;
     
     e.preventDefault();
-    this.props.handleSave(name);
-    this.setState({ displayForm: false });
+    //this.props.handleSave(name);
+    this.setState({ 
+        displayForm: false,
+        names: [...names, name],
+        name: ""
+    });
 
 }
 
 render() {
 
-    let { name } = this.state;
+    let { name, names } = this.state;
 
     return (
         <>
@@ -46,6 +51,7 @@ render() {
                 
                     <input
                         className="form-input"
+                        type="text"
                         onChange={ this.handleName }
                         value={ name }
                         placeholder="e.g. Harry Potter"
@@ -57,7 +63,18 @@ render() {
                     >Add</button>
                     
                 </form>
-                
+                { names ? (
+                    <ul className="list-group list-group-flush">
+                        { names.map((value, index) => (
+                            <li 
+                                className="list-group-item"
+                                key={ index }
+                            >{ value }</li>
+                        )) }
+                    </ul>
+                    
+                ) : <p>Add a name in the box above.</p>
+                }
             </section>
         </>
     ); }
