@@ -43,6 +43,7 @@ handleAdd(e) {
         });
 
 }
+
 shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let n = Math.floor(Math.random() * (i + 1));
@@ -50,9 +51,13 @@ shuffleArray(array) {
     }
 }
 
-// filterTeams(array) {
-//     let teamA = array.filter()
-// }
+filterTeams(array) {
+    let teamA = array.slice(0,(array.length/2));
+    let teamB = array.slice(array.length/2);
+    console.log([teamA, teamB]);
+    
+    
+}
 
 handleCreateTeams(e) {
     
@@ -65,12 +70,12 @@ handleCreateTeams(e) {
         displayForm: false,
         shuffledNames: this.shuffleArray(names),
     }) 
-
+    
 }
 render() {
-
-    let { name, names } = this.state;
-
+    
+    let { names, filterTeams } = this.state;
+    
     return (
         <>
             <section className="settings">
@@ -85,7 +90,7 @@ render() {
                         className="form-input"
                         type="text"
                         onChange={ this.handleName }
-                        value={ name }
+                        value={ this.state.name }
                         placeholder="e.g. Harry Potter"
                     />
                         
@@ -110,6 +115,7 @@ render() {
                     onClick={ this.handleCreateTeams }
                     >Create Teams</button>
             </section>
+            
         </>
     ); }
 }
