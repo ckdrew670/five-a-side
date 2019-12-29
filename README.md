@@ -1,6 +1,10 @@
-## Five-A-Side Team Picker
+## Five-A-Side Team Picker (Simple Version)
 
+This app, created using React, allows the user to type in ten player names to be randomly sorted into two teams of 5 players. 
 
+The landing page will use a form with ten text inputs and a submit button. 
+On submitting the form the randomised teams will be shown. 
+From here, the user can choose to randomise the teams again or go back to enter a new set of players.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
