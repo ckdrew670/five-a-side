@@ -14,6 +14,7 @@ class Settings extends Component {
     
         this.handleName = this.handleName.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
+        this.handleCreateTeams = this.handleCreateTeams.bind(this);
     }
 
 handleName(e) {
@@ -30,18 +31,28 @@ handleAdd(e) {
 
     name !== "" ?
         this.setState({ 
-            //displayForm: false,
+            
             names: [...names, name],
             name: ""
         }) : 
 
         this.setState({ 
-            //displayForm: false,
+            
             names: [...names],
             name: ""
         });
 
 }
+shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let n = Math.floor(Math.random() * (i + 1));
+        [array[i], array[n]] = [array[n], array[i]];
+    }
+}
+
+// filterTeams(array) {
+//     let teamA = array.filter()
+// }
 
 handleCreateTeams(e) {
     
@@ -50,11 +61,10 @@ handleCreateTeams(e) {
     e.preventDefault();
     //this.props.handleSave(name);
 
-    
-        this.setState({ 
-            //displayForm: false,
-            names: [...names]
-        }) 
+    this.setState({ 
+        displayForm: false,
+        shuffledNames: this.shuffleArray(names),
+    }) 
 
 }
 render() {
