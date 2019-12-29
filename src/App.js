@@ -1,9 +1,14 @@
 import React from 'react';
+import Settings from './Settings';
+import Header from './Header';
 import './App.css';
 
 function App() {
   return (
-   <h1>Test</h1>
+    <>
+      <Header/>
+      <Settings/>
+    </>
   );
 }
 
