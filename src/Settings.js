@@ -13,7 +13,7 @@ class Settings extends Component {
         };
     
         this.handleName = this.handleName.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
     }
 
 handleName(e) {
@@ -21,7 +21,7 @@ handleName(e) {
     this.setState({ name: e.currentTarget.value });
 }
 
-handleSubmit(e) {
+handleAdd(e) {
     
     let { name, names } = this.state;
     
@@ -34,7 +34,7 @@ handleSubmit(e) {
             names: [...names, name],
             name: ""
         }) : 
-         
+
         this.setState({ 
             //displayForm: false,
             names: [...names],
@@ -43,6 +43,20 @@ handleSubmit(e) {
 
 }
 
+handleCreateTeams(e) {
+    
+    let { names } = this.state;
+    
+    e.preventDefault();
+    //this.props.handleSave(name);
+
+    
+        this.setState({ 
+            //displayForm: false,
+            names: [...names]
+        }) 
+
+}
 render() {
 
     let { name, names } = this.state;
@@ -55,7 +69,7 @@ render() {
 
                 <form 
                     className="form" 
-                    onSubmit={ this.handleSubmit }>
+                    onSubmit={ this.handleAdd }>
                 
                     <input
                         className="form-input"
@@ -67,20 +81,24 @@ render() {
                         
                     <button 
                     type="submit" 
-                    className="button"
+                    className="button-add"
                     >Add</button>
                     
                 </form>
-                 
+                
                 <ul className="list-group list-group-flush">
-                    { names.map((value, index) => (
+                    { names.length > 0 ? names.map((value, index) => (
                         <li 
                             className="list-group-item"
                             key={ index }
                         >{ value }</li>
-                    ))}
+                    )) : <p>Add a player in the box above.</p> }
                 </ul>     
                 
+                <button 
+                    className="button-create"
+                    onClick={ this.handleCreateTeams }
+                    >Create Teams</button>
             </section>
         </>
     ); }
