@@ -48,17 +48,19 @@ h2 {
 }
 
 .form-input {
-  max-width: 60%;
+  max-width: 80%;
   height: 50px;
   margin: 10px;
+  border: 1px solid lightgrey;
   border-bottom: 3px solid green;
-  color: black;
+  color: lightgrey;
   font-weight: normal;
   font-size: 1.2em;
 }
 
 .form-input:focus {
-  max-width: 60%;
+  max-width: 80%;
+  border: none;
   margin: 10px;
   color: green;
   font-weight: normal;

@@ -27,11 +27,19 @@ handleSubmit(e) {
     
     e.preventDefault();
     //this.props.handleSave(name);
-    this.setState({ 
-        displayForm: false,
-        names: [...names, name],
-        name: ""
-    });
+
+    name !== "" ?
+        this.setState({ 
+            //displayForm: false,
+            names: [...names, name],
+            name: ""
+        }) : 
+         
+        this.setState({ 
+            //displayForm: false,
+            names: [...names],
+            name: ""
+        });
 
 }
 
@@ -63,18 +71,16 @@ render() {
                     >Add</button>
                     
                 </form>
-                { names ? (
-                    <ul className="list-group list-group-flush">
-                        { names.map((value, index) => (
-                            <li 
-                                className="list-group-item"
-                                key={ index }
-                            >{ value }</li>
-                        )) }
-                    </ul>
-                    
-                ) : <p>Add a name in the box above.</p>
-                }
+                 
+                <ul className="list-group list-group-flush">
+                    { names.map((value, index) => (
+                        <li 
+                            className="list-group-item"
+                            key={ index }
+                        >{ value }</li>
+                    ))}
+                </ul>     
+                
             </section>
         </>
     ); }
