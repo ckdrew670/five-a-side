@@ -142,45 +142,49 @@ render() {
             </>
             :
             
-            <section className="team-sheet">
-                <div className="team-card">
-                    <h2>Team A</h2>
-                    <ul className="list-group">
-                        { names.filter((value, i) => (
-                            i % 2 === 0 ?
-                            <li 
-                                className="list-group-item"
-                                key={ i }
-                            >{ value }</li>
-                        :
-                        null ))
-                        }
-                    </ul>    
+            <section>
+                <div className="team-sheet">
+                    <div className="team-card">
+                        <h2>Team A</h2>
+                        <ul className="list-group">
+                            { names.filter((value, i) => (
+                                i % 2 === 0 ?
+                                <li 
+                                    className="list-group-item"
+                                    key={ i }
+                                >{ value }</li>
+                            :
+                            null ))
+                            }
+                        </ul>    
+                    </div>
+
+                    <div className="team-card">
+                        <h2>Team B</h2>
+                        <ul className="list-group">
+                            { names.filter((value, i) => (
+                                i % 2 !== 0 ?
+                                <li 
+                                    className="list-group-item"
+                                    key={ i }
+                                >{ value }</li>
+                            :
+                            null ))}
+                        </ul>    
+                    </div>
                 </div>
+                
+                <div className="buttons">
+                    <button 
+                        className="button-reshuffle"
+                        onClick={ this.handleReshuffle }
+                    >Reshuffle</button>
 
-                {/* <div className="team-card">
-                    <h2>Team B</h2>
-                    <ul className="list-group">
-                        { names.filter((value, i) => (
-                            i % 2 !== 0 ?
-                            <li 
-                                className="list-group-item"
-                                key={ i }
-                            >{ value }</li>
-                        :
-                        null ))}
-                    </ul>    
-                </div> */}
-                <button 
-                    className="button-reshuffle"
-                    onClick={ this.handleReshuffle }
-                >Reshuffle Teams</button>
-
-                <button 
-                    className="button-create"
-                    onClick={ this.handleReset }
-                >Create New Teams</button>
-
+                    <button 
+                        className="button-create button-reset"
+                        onClick={ this.handleReset }
+                    >Create New Teams</button>
+                </div>
             </section>
             
     ); }
