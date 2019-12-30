@@ -1,10 +1,23 @@
-## Five-A-Side Team Picker (Simple Version)
+## Five-A-Side Team Picker
 
-This app, created using React, allows the user to type in ten player names to be randomly sorted into two teams of 5 players. 
+This app, created using React, allows the user to type in multiple player names to be randomly sorted into two teams. 
 
-The landing page will use a form with ten text inputs and a submit button. 
-On submitting the form the randomised teams will be shown. 
-From here, the user can choose to randomise the teams again or go back to enter a new set of players.
+
+## How it works
+
+The user enters each player name. The names are stored in an array that is outputted as an unordered list below the form input. 
+The user then clicks on 'Create Teams' which randomly shuffles the array of names, hides the form and initial list and displays the team sheets. Each team card currently uses a .filter() iterator method (taking the index value and seeing if it is odd or even) to split the names into the two teams. 
+In the team sheets view, the user can choose to Reshuffle the teams (calling the shuffleArray() method again) or can be taken back to the previous view to create a brand new team.
+
+Improvements:
+Allow the user to change the list before the teams are split. 
+Allow user to input player ability and sort teams accordingly.
+
+## Method
+
+Initially, I created a React app using one main component (Settings.js - there is also a Header.js) so that I could get the app working without worrying about lifting state/Redux. 
+
+Next step: split app into appropriate components and add Redux to manage state. 
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
