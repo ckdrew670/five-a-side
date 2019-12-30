@@ -51,6 +51,10 @@ shuffleArray(array) {
     }
 }
 
+filterTeams(array) {
+
+}
+
 handleCreateTeams(e) {
     
     let { names } = this.state;
@@ -96,7 +100,9 @@ handleReset(e) {
 render() {
     
     let { names, displayForm } = this.state;
-    
+    let teamA = names.filter((val, i) => i % 2 === 0);
+    let teamB = names.filter((val, i) => i % 2 !== 0);
+
     return (
         
             displayForm ?
@@ -140,6 +146,7 @@ render() {
 
             </section>
             </>
+
             :
             
             <section>
@@ -147,29 +154,24 @@ render() {
                     <div className="team-card">
                         <h2>Team A</h2>
                         <ul className="list-group">
-                            { names.filter((value, i) => (
-                                i % 2 === 0 ?
+                            { teamA.map((value, i) => 
                                 <li 
                                     className="list-group-item"
                                     key={ i }
                                 >{ value }</li>
-                            :
-                            null ))
-                            }
+                            )}
                         </ul>    
                     </div>
 
                     <div className="team-card">
                         <h2>Team B</h2>
                         <ul className="list-group">
-                            { names.filter((value, i) => (
-                                i % 2 !== 0 ?
+                            { teamB.map((value, i) => 
                                 <li 
                                     className="list-group-item"
                                     key={ i }
                                 >{ value }</li>
-                            :
-                            null ))}
+                            )}
                         </ul>    
                     </div>
                 </div>
