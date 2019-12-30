@@ -51,10 +51,6 @@ shuffleArray(array) {
     }
 }
 
-filterTeams(array) {
-
-}
-
 handleCreateTeams(e) {
     
     let { names } = this.state;
@@ -129,7 +125,7 @@ render() {
                     
                 </form>
                 
-                <ul className="list-group list-group-flush">
+                <ul className="list-group">
                     { names.length > 0 ? names.map((value, index) => (
                         <li 
                             className="list-group-item"
