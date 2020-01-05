@@ -95,7 +95,9 @@ ul {
   
 }
 
-li {
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
   font-size: 1.4em;
   font-family: 'Libre Baskerville';
   text-align: center;
@@ -108,6 +110,11 @@ p {
   text-align: center;
   font-size: 1.2em;
   font-family: 'Libre Baskerville';
+}
+
+.delete-button {
+  color: red;
+  margin-left: 20px;
 }
 
 .button-create {
@@ -156,6 +163,11 @@ p {
 
 .button-reset {
   margin: 20px 0 80px 0;
+}
+
+.team-list {
+  text-align: center;
+  display: block;
 }
 
 

@@ -81,10 +81,7 @@ handleReshuffle(e) {
 
 handleReset(e) {
     
-    let { names, displayForm } = this.state;
-    
     e.preventDefault();
-    //this.props.handleSave(name);
 
     this.setState({ 
         displayForm: true,
@@ -130,7 +127,10 @@ render() {
                         <li 
                             className="list-group-item"
                             key={ index }
-                        >{ value }</li>
+                        >
+                            <div>{ value }</div>
+                            <button className="btn delete-button">&#x2715;</button>
+                        </li>
                     )) : <p className="instructions">Add each player by typing their name in the box above. You can add any number of players to the list. <br/> When you are done, click 'Create Teams' to split the players into two random teams.</p>
                 }
                 </ul>     
@@ -152,7 +152,7 @@ render() {
                         <ul className="list-group">
                             { teamA.map((value, i) => 
                                 <li 
-                                    className="list-group-item"
+                                    className="list-group-item team-list"
                                     key={ i }
                                 >{ value }</li>
                             )}
@@ -164,7 +164,7 @@ render() {
                         <ul className="list-group">
                             { teamB.map((value, i) => 
                                 <li 
-                                    className="list-group-item"
+                                    className="list-group-item team-list"
                                     key={ i }
                                 >{ value }</li>
                             )}
